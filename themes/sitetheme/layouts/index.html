@@ -1,0 +1,53 @@
+{{ define "main" }}
+<section id="about">
+    <h3>About</h3>
+    <p>I'm TODO year old software developer living in Zagreb, Croatia. I finished college education at <a href="https://www.racunarstvo.hr/" target="_blank">Algebra</a> with bachelor's degree in computer science. <!--My programming language of choice is PHP and my current favorite framework is <a href="https://laravel.com/" target="_blank">Laravel</a>.--> I'm currently working at <a href="http://www.teslasoftware.eu/" target="_blank">Tesla Software</a>.</p>
+</section>
+
+<section id="blog">
+    <h3>Posts</h3>
+    <ul>
+        {{ range where .Pages "Section" "blog" }}
+            {{ range .Pages }}
+            <li class="post">
+                <a href="#">{{ .Title }} - {{ .Date }}</a>
+                <div class="project-info">
+                    {{ .Content }}
+                </div>
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
+
+<section id="projects">
+    <h3>I've worked on</h3>
+    <ul>
+        {{ range where .Pages "Section" "projects" }}
+            {{ range .Pages.ByWeight }}
+            <li class="project">
+                <a href="#">{{ .Title }}</a>
+                <div class="project-info">
+                    {{ .Content }}
+                    <ul class="tags">
+                        {{ range .Params.technologies }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
+
+<section id="about">
+    <h3>Find me on</h3>
+    <ul>
+        <li class="contact-1"><a href="https://github.com/karlomikus" target="_blank">GitHub</a></li>
+        <li class="contact-2"><a href="https://www.facebook.com/karlomikus" target="_blank">Facebook</a></li>
+        <li class="contact-3"><a href="http://hr.linkedin.com/in/kmikus" target="_blank">Linkedin</a></li>
+        <li class="contact-4"><a href="mailto:contact@karlomikus.com">contact@karlomikus.com</a></li>
+    </ul>
+</section>
+{{ end }}

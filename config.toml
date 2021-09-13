@@ -1,0 +1,4 @@
+baseURL = 'https://karlomikus.com/'
+languageCode = 'en-us'
+title = 'Karlo Mikuš'
+theme = "sitetheme"
