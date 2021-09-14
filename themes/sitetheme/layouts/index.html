@@ -6,14 +6,14 @@
 
 <section id="blog">
     <h3>Posts</h3>
-    <ul>
+    <ul class="home-list">
         {{ range where .Pages "Section" "blog" }}
             {{ range .Pages }}
             <li class="post">
-                <a href="#">{{ .Title }} - {{ .Date }}</a>
-                <div class="project-info">
-                    {{ .Content }}
-                </div>
+                <a href="{{ .RelPermalink }}">
+                    <small>{{ .Date | time.Format ":date_long" }}</small>
+                    {{ .Title }}
+                </a>
             </li>
             {{ end }}
         {{ end }}
@@ -22,7 +22,7 @@
 
 <section id="projects">
     <h3>I've worked on</h3>
-    <ul>
+    <ul class="home-list">
         {{ range where .Pages "Section" "projects" }}
             {{ range .Pages.ByWeight }}
             <li class="project">
@@ -43,11 +43,10 @@
 
 <section id="about">
     <h3>Find me on</h3>
-    <ul>
-        <li class="contact-1"><a href="https://github.com/karlomikus" target="_blank">GitHub</a></li>
-        <li class="contact-2"><a href="https://www.facebook.com/karlomikus" target="_blank">Facebook</a></li>
-        <li class="contact-3"><a href="http://hr.linkedin.com/in/kmikus" target="_blank">Linkedin</a></li>
-        <li class="contact-4"><a href="mailto:contact@karlomikus.com">contact@karlomikus.com</a></li>
+    <ul class="home-list">
+        <li class="contact"><a href="https://github.com/karlomikus" target="_blank">GitHub</a></li>
+        <li class="contact"><a href="http://hr.linkedin.com/in/kmikus" target="_blank">Linkedin</a></li>
+        <li class="contact"><a href="mailto:contact@karlomikus.com">contact@karlomikus.com</a></li>
     </ul>
 </section>
 {{ end }}

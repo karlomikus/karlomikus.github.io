@@ -473,56 +473,53 @@ section p a {
 section p a:hover,
 section p a:focus,
 section p a:active {
-  border-color: #ff7d63;
+  border-color: #f03c80;
 }
 
-ul {
+.home-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-ul > li.post > a {
-  background: #22e8d3;
-}
-
-ul > li.project > a {
-  background: #353535;
-  color: #fff;
-}
-
-ul > li.contact-1 > a {
-  background: #ff4e2b;
-}
-ul > li.contact-2 > a {
-  background: #ff411c;
-}
-ul > li.contact-3 > a {
-  background: #ff350c;
-}
-ul > li.contact-4 > a {
-  background: #fc2a00;
-}
-ul > li.contact-5 > a {
-  background: #ed2700;
-}
-ul > li.contact-6 > a {
-  background: #dd2500;
-}
-ul > li.contact-7 > a {
-  background: #ce2200;
-}
-
-ul > li > a {
+.home-list li > a {
   display: block;
   padding: 5px 10px;
   color: #141414;
   margin-bottom: 2px;
 }
-ul > li > a:hover,
-ul > li > a:active,
-ul > li > a:focus {
-  background: #fff;
+
+.home-list li.post > a {
+  background: #353535;
+  color: #fff;
+}
+
+.home-list li.post > a small {
+  display: block;
+  margin-bottom: 8px;
+  color: #acacac;
+}
+
+.home-list li.post > a:hover,
+.home-list li.post > a:focus,
+.home-list li.post > a:active {
+  background: #9ff5ec;
+  color: #333;
+}
+
+.home-list li.project > a {
+  background: #353535;
+  color: #fff;
+}
+.home-list li.project > a:hover,
+.home-list li.project > a:focus,
+.home-list li.project > a:active {
+  background: #fff88f;
+  color: #333;
+}
+
+.home-list li.contact > a {
+  background: #f03c80;
 }
 
 .project-info {
@@ -530,17 +527,21 @@ ul > li > a:focus {
   padding: 15px 20px;
   display: none;
 }
-.project-info--show {
+
+.project--show .project-info {
   display: block;
 }
+
 .project-info > p {
   margin: 0;
 }
 
 .tags {
-  margin-top: 10px;
+  margin: 10px 0 0 0;
+  padding: 0;
   overflow: hidden;
 }
+
 .tags li {
   font-family: "Khula", sans-serif;
   float: left;
@@ -550,6 +551,10 @@ ul > li > a:focus {
   padding: 7px 8px 3px 8px;
   line-height: 12px;
   margin-right: 5px;
+}
+
+.blog-post p {
+  line-height: 2rem;
 }
 
 @media screen and (max-width: 500px) {

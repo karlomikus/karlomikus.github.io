@@ -1,6 +1,6 @@
-document.querySelectorAll('ul li a').forEach(e => {
+document.querySelectorAll('#projects li a').forEach(e => {
     e.addEventListener('click', e => {
         e.preventDefault();
-        e.target.parentElement.querySelector('.project-info').classList.toggle('project-info--show')
+        e.target.parentElement.classList.toggle('project--show')
     })
 })
