@@ -452,9 +452,15 @@ a {
   text-decoration: none;
 }
 
-header img {
+header svg {
   margin: 50px 0 0 0;
   width: 60px;
+}
+
+header svg .logo-l,
+header svg .logo-m,
+header svg .logo-r {
+  fill: #fff;
 }
 
 section h3 {
@@ -484,42 +490,44 @@ section p a:active {
 
 .home-list li > a {
   display: block;
-  padding: 5px 10px;
+  padding: 8px 14px;
   color: #141414;
   margin-bottom: 2px;
 }
 
+/* POSTS */
 .home-list li.post > a {
   background: #353535;
   color: #fff;
 }
-
 .home-list li.post > a small {
   display: block;
   margin-bottom: 8px;
   color: #acacac;
 }
-
 .home-list li.post > a:hover,
 .home-list li.post > a:focus,
 .home-list li.post > a:active {
   background: #9ff5ec;
   color: #333;
 }
+.home-list li.post > a:hover small,
+.home-list li.post > a:focus small,
+.home-list li.post > a:active small {
+  color: #000;
+}
 
+/* PROJECTS */
 .home-list li.project > a {
   background: #353535;
   color: #fff;
 }
+.home-list li.project.project--show > a,
 .home-list li.project > a:hover,
 .home-list li.project > a:focus,
 .home-list li.project > a:active {
   background: #fff88f;
   color: #333;
-}
-
-.home-list li.contact > a {
-  background: #f03c80;
 }
 
 .project-info {
@@ -553,6 +561,18 @@ section p a:active {
   margin-right: 5px;
 }
 
+/* CONTACTS */
+.home-list li.contact > a {
+  background: #353535;
+  color: #fff;
+}
+.home-list li.contact > a:hover,
+.home-list li.contact > a:focus,
+.home-list li.contact > a:active {
+  background: #f03c80;
+}
+
+/* SINGLE POST */
 .blog-post p {
   line-height: 2rem;
 }

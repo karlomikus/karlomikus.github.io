@@ -1,9 +1,12 @@
 {{ define "main" }}
 <section id="about">
     <h3>About</h3>
-    <p>I'm TODO year old software developer living in Zagreb, Croatia. I finished college education at <a href="https://www.racunarstvo.hr/" target="_blank">Algebra</a> with bachelor's degree in computer science. <!--My programming language of choice is PHP and my current favorite framework is <a href="https://laravel.com/" target="_blank">Laravel</a>.--> I'm currently working at <a href="http://www.teslasoftware.eu/" target="_blank">Tesla Software</a>.</p>
+    <p>I'm software developer living in Zagreb, Croatia. I finished college education at <a href="https://www.algebra.hr/visoko-uciliste/" target="_blank">Algebra</a> with bachelor's degree in computer science. I'm currently working at <a href="http://www.teslasoftware.eu/" target="_blank">Tesla Software</a> making software solutions in school education.</p>
 </section>
 
+{{ $posts := where .Pages "Section" "blog" }}
+{{ $posts_count := len $posts }}
+{{ if ge $posts_count 0 }}
 <section id="blog">
     <h3>Posts</h3>
     <ul class="home-list">
@@ -19,6 +22,7 @@
         {{ end }}
     </ul>
 </section>
+{{ end }}
 
 <section id="projects">
     <h3>I've worked on</h3>
